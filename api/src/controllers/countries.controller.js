@@ -14,12 +14,12 @@ const loadDB = async ()=>{
               where:{
                   id:el.cca3,
                   name:el.name.common,
-                  image:el.flags[0],
+                  image:el.flags[1],
                   continent:el.region,
                   capital:el.capital?el.capital[0]:'no se encontro capital',
                   subregion:el.subregion?el.subregion:'no se encontró subregion',
                   area:parseInt(el.area) ? parseInt(el.area) : 0,
-                  population:parseInt(el.population) 
+                  population:parseInt(el.population)?parseInt(el.population):0
   
               }
             })

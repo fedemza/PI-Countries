@@ -11,10 +11,6 @@ const router = Router();
 
 
 
-
-
-
-
 const Countries = require('./countries');
 const Activity = require('./activity');
 
