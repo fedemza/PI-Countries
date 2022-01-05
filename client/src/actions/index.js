@@ -9,3 +9,44 @@ export function getCountries(){
         })
     }
 }
+
+export function orderByName(payload){
+
+    return{
+        type: 'ORDER_BY_NAME',
+        payload
+    }
+
+}
+export function orderByPopulation(payload){
+
+    return{
+        type: 'ORDER_BY_POPULATION',
+        payload
+    }
+
+}
+export function filterCountriesByContinent(payload){
+
+    return{
+        type: 'FILTER_BY_CONTINENT',
+        payload
+    }
+
+}
+export function filterCountriesByActiviy(payload){
+
+    return{
+        type: 'FILTER_BY_ACTIVITY',
+        payload
+    }
+
+}
+export function filterCountriesByActiviyName(payload){
+
+    return{
+        type: 'FILTER_BY_ACTIVITY_NAME',
+        payload
+    }
+
+}
