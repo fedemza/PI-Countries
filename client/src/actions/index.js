@@ -34,7 +34,7 @@ export function filterCountriesByContinent(payload){
     }
 
 }
-export function filterCountriesByActiviy(payload){
+export function filterCountriesByActivity(payload){
 
     return{
         type: 'FILTER_BY_ACTIVITY',
@@ -42,7 +42,7 @@ export function filterCountriesByActiviy(payload){
     }
 
 }
-export function filterCountriesByActiviyName(payload){
+export function filterCountriesByActivityName(payload){
 
     return{
         type: 'FILTER_BY_ACTIVITY_NAME',

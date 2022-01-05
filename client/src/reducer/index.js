@@ -75,20 +75,36 @@ function rootReducer (state = initialState, action){
                 ...state,
                 countries: sortedArrP
              }
+
+            //  case 'FILTER_BY_ACTIVITY':
+            //     const filtered =
+            //       action.payload === 'All'
+            //         ? state.allCountries
+            //         : state.allCountries.filter(
+            //             (c) =>
+            //               c.activities &&
+            //               c.activities.filter((act) => act.season === action.payload)
+            //                 .length
+            //           )
+            //     return {
+            //       ...state,
+            //       countries: filtered,
+            //     }
         case 'FILTER_BY_ACTIVITY':
             const allCountriesA = state.allCountries
             const activityFiltered = action.payload === 'All' ? allCountriesA : 
-            allCountriesA.filter(el => el.activities?.filter(a => a.season === action.pàyload)) 
+            allCountriesA.filter((el) => el.activities?.filter((a) => a.season === action.payload).length)
         
         return{
                 ...state,
                 countries: activityFiltered
                 
             }
+
         case 'FILTER_BY_ACTIVITY_NAME':
             const allCountriesB = state.allCountries
             const activityFilteredName = action.payload === 'All' ? allCountriesB : 
-            allCountriesB.filter(el => el.activities?.filter(a => a.name === action.pàyload))    
+            allCountriesB.filter(el => el.activities?.filter(a => a.name === action.payload).length)    
         
         return{
                 ...state,

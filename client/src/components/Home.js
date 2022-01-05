@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { getCountries, filterCountriesByContinent, orderByName, orderByPopulation,
-     filterCountriesByActiviy, filterCountriesByActiviyName} from '../actions';
+     filterCountriesByActivity, filterCountriesByActivityName} from '../actions';
 import {Link} from 'react-router-dom';
 import Card from './Card';
 import Paginado from './Paginado';
@@ -11,7 +11,29 @@ export default function Home (){
 
     const dispatch = useDispatch()
     const allCountries = useSelector ((state) => state.countries);
-    const activities = useSelector ((state) => state.activities);
+   // const activities = useSelector ((state) => state.activities);
+   const actividades=[]
+   console.log('actividades soy',actividades)
+    const activities = allCountries.map(el=> {
+        if(el.activities.length){
+            el.activities.map(a=>actividades.push(a.name))
+        }
+        
+     } )
+    console.log('soy activities',activities)
+    var activitiesUnique= []
+    console.log('soy activites unique',activitiesUnique)
+
+    for(var i = 0; i < actividades.length; i++) {
+        
+        
+        const elemento = actividades[i];
+        
+        if (!activitiesUnique.includes(actividades[i])) {
+            activitiesUnique.push(elemento);
+        }
+      }
+    
     const [orden, setOrden] = useState('')
     const [currentPage, setCurrentPage] = useState(1);
     const countriesFirstPage = 9
@@ -20,8 +42,10 @@ export default function Home (){
     const indexOfLastCountry = currentPage===1? countriesFirstPage: countriesPerPage*currentPage-difCountriesPerPage;
     const indexOfFirstCountry = indexOfLastCountry - (currentPage===1?countriesFirstPage:countriesPerPage);
     const currentCountries = allCountries.slice(indexOfFirstCountry, indexOfLastCountry)
-  
+    
  
+
+
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber)
     }
@@ -56,10 +80,10 @@ export default function Home (){
         setCurrentPage(1)
     }
     function handleFilterActivity(e){
-        dispatch(filterCountriesByActiviy(e.target.value))
+        dispatch(filterCountriesByActivity(e.target.value))
     }
     function handleFilterActivitiesName(e){
-        dispatch(filterCountriesByActiviyName(e))
+        dispatch(filterCountriesByActivityName(e.target.value))
     }
 
 
@@ -103,8 +127,9 @@ export default function Home (){
                 
                 <select onChange={(e) => handleFilterActivitiesName(e)} >
                 <option value='All'>Actividades</option>
-                    {activities.map((a) => (
-                            <option value={a.name}>{a.name}</option>
+                    {activitiesUnique.map(el => 
+                         ( 
+                    <option value={el}>{el}</option>
                     ))}
                 </select>
                 <Paginado 
