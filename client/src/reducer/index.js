@@ -14,6 +14,11 @@ function rootReducer (state = initialState, action){
                 allCountries:action.payload,
                 
             }
+        case 'GET_NAME_COUNTRIES':
+            return{
+                ...state,
+                countries:action.payload,
+            }
         
         case 'FILTER_BY_CONTINENT':
             const allCountries = state.allCountries
@@ -46,12 +51,13 @@ function rootReducer (state = initialState, action){
                     }
                     return 0;
                 })
+               
             return{
                 ...state,
                 countries: sortedArr
              }
             case 'ORDER_BY_POPULATION':
-                let sortedArrP = action.payload === 'Populationasc' ?
+                let sortedArrP =  action.payload === 'Populationasc' ?
                 state.countries.sort(function (a,b) {
                     if (a.population>b.population) {
                         return 1;

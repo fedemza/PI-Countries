@@ -9,6 +9,21 @@ export function getCountries(){
         })
     }
 }
+export function getNameCountries(name){
+    return async function(dispatch){
+        try {
+
+            var json = await axios.get('http://localhost:3001/countries?name=' + name);
+        return dispatch({
+            type: 'GET_NAME_COUNTRIES',
+            payload: json.data
+        })
+            
+        } catch (e) {
+            console.log(e)
+        }
+    }
+}
 
 export function orderByName(payload){
 

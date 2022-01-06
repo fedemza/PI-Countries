@@ -6,6 +6,7 @@ import { getCountries, filterCountriesByContinent, orderByName, orderByPopulatio
 import {Link} from 'react-router-dom';
 import Card from './Card';
 import Paginado from './Paginado';
+import SearchBar from './SearchBar';
 
 export default function Home (){
 
@@ -13,17 +14,14 @@ export default function Home (){
     const allCountries = useSelector ((state) => state.countries);
    // const activities = useSelector ((state) => state.activities);
    const actividades=[]
-   console.log('actividades soy',actividades)
     const activities = allCountries.map(el=> {
         if(el.activities.length){
             el.activities.map(a=>actividades.push(a.name))
         }
         
      } )
-    console.log('soy activities',activities)
+    
     var activitiesUnique= []
-    console.log('soy activites unique',activitiesUnique)
-
     for(var i = 0; i < actividades.length; i++) {
         
         
@@ -66,13 +64,13 @@ export default function Home (){
         e.preventDefault();
         dispatch(orderByName(e.target.value))
         setCurrentPage(1)
-        setOrden(`Ordenado ${e.target.value}`)
+        setOrden(e.target.value)
     }
     function handleSortPopulation(e){
         e.preventDefault();
         dispatch(orderByPopulation(e.target.value))
         setCurrentPage(1)
-        setOrden(`Ordenado ${e.target.value}`)
+       setOrden(e.target.value)
     }
   
     function handleFilterContinent(e){
@@ -132,12 +130,16 @@ export default function Home (){
                     <option value={el}>{el}</option>
                     ))}
                 </select>
+                          
+
                 <Paginado 
                 countriesPerPage={countriesPerPage}
                 countriesFirstPage={countriesFirstPage}
                 allCountries={allCountries.length}
                 paginado={paginado}
                 />
+
+                <SearchBar/> 
 
                 {
                 currentCountries?.map(el => {
