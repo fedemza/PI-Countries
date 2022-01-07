@@ -20,6 +20,12 @@ function rootReducer (state = initialState, action){
                 countries:action.payload,
             }
         
+         case 'POST_VIDEOGAME':
+                return{
+                    ...state
+                }
+            
+        
         case 'FILTER_BY_CONTINENT':
             const allCountries = state.allCountries
             const continentFiltered = action.payload === 'All' ? allCountries : allCountries.filter(el => el.continent === action.payload)    
@@ -29,7 +35,8 @@ function rootReducer (state = initialState, action){
                 countries: continentFiltered
                 
             }
-
+            
+         
             case 'ORDER_BY_NAME':
                 let sortedArr = action.payload === 'AZ' ?
                 state.countries.sort(function (a,b) {
