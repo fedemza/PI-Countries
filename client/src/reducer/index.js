@@ -37,9 +37,35 @@ function rootReducer (state = initialState, action){
             }
             
          
+            // case 'ORDER_BY_NAME':
+
+            //     let sortedArr = action.payload === 'AZ' ?
+            //     state.countries.sort(function (a,b) {
+            //         if (a.name>b.name) {
+            //             return 1;
+            //         }
+            //         if (b.name>a.name) {
+            //             return -1;
+            //         }
+            //         return 0;
+
+            //     }) : 
+            //     state.countries.sort(function (a,b) {
+            //         if (a.name>b.name) {
+            //             return -1;
+            //         }
+            //         if (b.name>a.name) {
+            //             return 1;
+            //         }
+            //         return 0;
+            //     })
+               
             case 'ORDER_BY_NAME':
-                let sortedArr = action.payload === 'AZ' ?
-                state.countries.sort(function (a,b) {
+
+
+                let sortedArr  
+              if  (action.payload === 'AZ' )
+             sortedArr=  state.countries.sort(function (a,b) {
                     if (a.name>b.name) {
                         return 1;
                     }
@@ -48,8 +74,9 @@ function rootReducer (state = initialState, action){
                     }
                     return 0;
 
-                }) : 
-                state.countries.sort(function (a,b) {
+                });
+                if  (action.payload === 'ZA' )
+              sortedArr=  state.countries.sort(function (a,b) {
                     if (a.name>b.name) {
                         return -1;
                     }
@@ -57,15 +84,22 @@ function rootReducer (state = initialState, action){
                         return 1;
                     }
                     return 0;
-                })
+                }) 
+                if  (action.payload === 'Order' )
+              sortedArr=  state.countries.sort(function (a,b) {
+                  
+                    return 0
+                }) 
                
             return{
                 ...state,
                 countries: sortedArr
              }
             case 'ORDER_BY_POPULATION':
-                let sortedArrP =  action.payload === 'Populationasc' ?
-                state.countries.sort(function (a,b) {
+                let sortedArrP  
+                
+                if (action.payload === 'Populationasc' )
+              sortedArrP = state.countries.sort(function (a,b) {
                     if (a.population>b.population) {
                         return 1;
                     }
@@ -74,8 +108,9 @@ function rootReducer (state = initialState, action){
                     }
                     return 0;
 
-                }) : 
-                state.countries.sort(function (a,b) {
+                }) 
+                if (action.payload === 'Populationdesc' )
+              sortedArrP=  state.countries.sort(function (a,b) {
                     if (a.population>b.population) {
                         return -1;
                     }
@@ -83,6 +118,11 @@ function rootReducer (state = initialState, action){
                         return 1;
                     }
                     return 0;
+                })
+                if (action.payload === 'Population' )
+              sortedArrP=  state.countries.sort(function (a,b) {
+                  
+                    return 0
                 })
             return{
                 ...state,
