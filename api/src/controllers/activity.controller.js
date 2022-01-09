@@ -28,12 +28,6 @@ const postActivity = async (req,res,next) => {
 
   await activ.addCountry(countriesDb)
 
-    
-    // countries.map(
-    //   async (c) => await activityCreated.setCountries(await Country.findByPk(c))
-    // )
-
-
   res.send('actividad creada')
     
   } catch (e) {

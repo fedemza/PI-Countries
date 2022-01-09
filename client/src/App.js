@@ -14,7 +14,7 @@ function App() {
     <Route exact path='/activity' component = {ActivityCreate} />
 
        </Switch>
-      <h1>Henry Countries</h1>
+      
     </div>
     </BrowserRouter>
    
