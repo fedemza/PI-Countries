@@ -1,8 +1,8 @@
 const initialState = {
     countries:[],
     allCountries:[],
-    activities:[],
-    allActivities:[],
+    detail:[]
+   
 }
 
 function rootReducer (state = initialState, action){
@@ -24,6 +24,11 @@ function rootReducer (state = initialState, action){
                 return{
                     ...state
                 }
+          case 'GET_DETAILS':
+                    return{
+                        ...state,
+                        detail:action.payload
+                    }
             
         
         case 'FILTER_BY_CONTINENT':
@@ -37,29 +42,6 @@ function rootReducer (state = initialState, action){
             }
             
          
-            // case 'ORDER_BY_NAME':
-
-            //     let sortedArr = action.payload === 'AZ' ?
-            //     state.countries.sort(function (a,b) {
-            //         if (a.name>b.name) {
-            //             return 1;
-            //         }
-            //         if (b.name>a.name) {
-            //             return -1;
-            //         }
-            //         return 0;
-
-            //     }) : 
-            //     state.countries.sort(function (a,b) {
-            //         if (a.name>b.name) {
-            //             return -1;
-            //         }
-            //         if (b.name>a.name) {
-            //             return 1;
-            //         }
-            //         return 0;
-            //     })
-               
             case 'ORDER_BY_NAME':
 
 

@@ -12,7 +12,6 @@ export default function Home (){
 
     const dispatch = useDispatch()
     const allCountries = useSelector ((state) => state.countries);
-   // const activities = useSelector ((state) => state.activities);
    const actividades=[]
     const activities = allCountries.map(el=> {
         if(el.activities.length){
