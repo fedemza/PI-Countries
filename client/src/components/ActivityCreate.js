@@ -97,8 +97,10 @@ export default function ActivityCreate(){
         if(
             !input.name || !input.difficulty || !input.duration
         || !input.season || !input.countries.length || input.season=='' || input.difficulty=='' 
-       // || input.countries.includes('')
-        ){ alert('completar todo lo requerido')}
+        || errors.hasOwnProperty('name')   || errors.hasOwnProperty('duration')  
+        
+        ){ 
+            alert('completar todo lo requerido correctamente')}
         else{
 
             e.preventDefault();

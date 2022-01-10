@@ -144,7 +144,7 @@ export default function Home (){
                 currentCountries?.map(el => {
                     return (
                         <fragment>
-                        <Link to={'home' + el.id}>
+                        <Link to={'countries/' + el.id}>
                         <Card name={el.name} image={el.image} continent={el.continent} key={el.id} /> 
                         </Link>
 

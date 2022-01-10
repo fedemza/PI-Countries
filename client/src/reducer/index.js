@@ -1,7 +1,7 @@
 const initialState = {
     countries:[],
     allCountries:[],
-    detail:[]
+    detail:{}
    
 }
 
