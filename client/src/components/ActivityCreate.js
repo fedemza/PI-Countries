@@ -19,9 +19,10 @@ function validate(input) {
     if(!input.season) {
         errors.season = 'Selecciona una temporada';
     }; 
-    if (input.countries.length<1) {
+    if (input.countries.length===0) {
         errors.countries = 'Por favor selecciona un pais'
     }
+    console.log('soy countries',input.countries)
     return errors
 }
 
@@ -44,19 +45,17 @@ export default function ActivityCreate(){
     })
 
     function handleSelect(e){
-        e.target.value!=='' ?
-        setInput({
+       if(e.target.value !=='' && !input.countries.includes(e.target.value))  
+     {   setInput({
             ...input,
-            countries: [...input.countries,   e.target.value]
-        }):  setInput({
-            ...input
+            countries:[...input.countries,   e.target.value]
             
         });
         setErrors(validate({
               ...input,
               [e.target.name]: e.target.value
           }))
-    }
+    }}
      function handleSelectDifficulty(e){
        setInput({
             ...input,
@@ -96,7 +95,7 @@ export default function ActivityCreate(){
     function handleSubmit(e){
         if(
             !input.name || !input.difficulty || !input.duration
-        || !input.season || !input.countries.length || input.season=='' || input.difficulty=='' 
+        || !input.season || input.countries.length<1 || input.season=='' || input.difficulty=='' 
         || errors.hasOwnProperty('name')   || errors.hasOwnProperty('duration')  
         
         ){ 
