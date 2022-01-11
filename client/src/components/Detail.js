@@ -26,7 +26,19 @@ export default function Detail(props){
             <h3> {myCountry[0].subregion}</h3>
             <h3> {(myCountry[0].area)/1000000} millones de KM²</h3>
             <h3> {myCountry[0].population}</h3>
-            {/* <h4> {myCountry[0].activities.length?myCountry[0].activities.map(): 'no hay actividades'}</h4> */}
+            {myCountry[0].activities.length?myCountry[0].activities.map(el=>(
+                <div>      
+                <h4>Actividad: {el.name}</h4>
+                <h5> Dificultad: {el.difficulty}</h5>
+                <h5>Duracion: {el.duration}</h5>
+                <h5>Temporada: {el.season}</h5>
+            
+                </div>
+               
+            ))
+            
+            
+            : (<h4>No hay Actividades</h4>)}
         </div>  : <p>Loading...</p>  
 
     
