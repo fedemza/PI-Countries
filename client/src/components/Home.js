@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import Card from './Card';
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
+import './Home.css'
 
 export default function Home (){
 
@@ -85,27 +86,35 @@ export default function Home (){
 
 
     return(
-        <div>
-            <Link to= '/activity'> Crear Actividad</Link>
-            <h1>Paises</h1>
-            <button onClick={e=> {handleClick(e)}}>
+        <div className='container'>
+          
+            <h1 className='titleHome'>“Una vez al año viaja a un lugar en el que nunca hayas estado antes”</h1>
+            <h1 className='titleHome'> Dalai Lama</h1>
+            <div>
+            <Link to= '/activity'> 
+            <button className='buttonCreate'>Crear Actividad</button>
+           </Link>
+            </div>
+            <button className='buttonReload'  onClick={e=> {handleClick(e)}}>
                 Volver a cargar todos los Paises
             </button>
             <div>
-            <select onChange={e => handleSort(e)}>
+            <navbar>
+            <div className='filtersBox'>
+            <select className='filter' onChange={e => handleSort(e)}>
                   <option value='Order'>Ordenar</option>
                     <option value='AZ'>A-Z</option>
                     <option value='ZA'>Z-A</option>
             </select>
-            <select onChange={e => handleSortPopulation(e)}  >
+            <select className='filter'  onChange={e => handleSortPopulation(e)}  >
                     <option value='Population'>Poblacion</option>
-                    <option value='Populationdesc'>+Población</option>
-                    <option value='Populationasc'>-Población</option>
+                    <option value='Populationdesc'>Población+</option>
+                    <option value='Populationasc'>Población-</option>
                 </select>
              
              
 
-                <select onChange={e => handleFilterContinent(e)}>
+                <select className='filter'  onChange={e => handleFilterContinent(e)}>
                     <option value='All'>Continentes</option>
                     <option value='Americas'>América</option>
                     <option value='Asia'>Asia</option>
@@ -114,7 +123,7 @@ export default function Home (){
                     <option value='Oceania'>Oceanía</option>
                     <option value='Antarctic'>Antártida</option>
                 </select>
-                <select onChange={e => handleFilterActivity(e)}>
+                <select className='filter'  onChange={e => handleFilterActivity(e)}>
                     <option value='All'>Actividades por Estaciones</option>
                     <option value='Verano'>Verano</option>
                     <option value='Primavera'>Primavera</option>
@@ -122,14 +131,14 @@ export default function Home (){
                     <option value='Otoño'>Otoño</option>
                 </select>
                 
-                <select onChange={(e) => handleFilterActivitiesName(e)} >
+                <select className='filter'  onChange={(e) => handleFilterActivitiesName(e)} >
                 <option value='All'>Actividades</option>
                     {activitiesUnique.map(el => 
                          ( 
                     <option value={el}>{el}</option>
                     ))}
                 </select>
-                          
+                </div>
 
                 <Paginado 
                 countriesPerPage={countriesPerPage}
@@ -139,20 +148,28 @@ export default function Home (){
                 />
 
                 <SearchBar/> 
-
-                {
-                currentCountries?.map(el => {
+                </navbar>   
+                <div className='cardBox'>
+                {currentCountries?.map(el => {
                     return (
                         <fragment>
-                        <Link to={'countries/' + el.id}>
+                        <Link className='link' to={'countries/' + el.id}>
                         <Card name={el.name} image={el.image} continent={el.continent} key={el.id} /> 
                         </Link>
 
                         </fragment>
                        
                  ) } )}
-
+                </div>
+            
+               {/* <Paginado 
+                countriesPerPage={countriesPerPage}
+                countriesFirstPage={countriesFirstPage}
+                allCountries={allCountries.length}
+                paginado={paginado}
+                /> */}
              </div>
+            
         </div>
     )  
 

@@ -1,0 +1,82 @@
+
+
+.titleHome{
+    color: rgb(35, 185, 68);
+    font-style: italic;
+}
+
+.buttonCreate {
+    color:white;
+    border-radius: 10px;
+    font-size: 15px;
+    height: 35px;
+    width: 120px;
+    background-color: rgb(42, 0, 231);
+    margin-top: 50px;
+  }
+  
+  .buttonCreate:hover {
+    cursor: pointer;
+    background-color:white;
+    color: rgb(42, 0, 231);
+    font-size: 15px;
+    height: 35px;
+    width: 120px;
+  }
+.buttonReload {
+    color:white;
+    border-radius: 10px;
+    font-size: 15px;
+    height: 35px;
+    width: 250px;
+    background-color: rgb(42, 0, 231);
+    margin-top: 50px;
+  }
+  
+  .buttonReload:hover {
+    cursor: pointer;
+    background-color:white;
+    color: rgb(42, 0, 231);
+    font-size: 15px;
+    height: 35px;
+    width: 250px;
+  }
+  
+  .filtersBox {
+    margin: 20px;
+ 
+  }
+  
+  .filter {
+    color:white;
+    background-color: rgb(42, 0, 231);
+    border: 1px solid #f3f1ed;
+    padding: 5px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200vh;
+    /* background-color: #f3f1ed; */
+    padding: 0;
+  }
+  .cardBox {
+    display: flex;
+    flex-direction:row;
+    flex-flow:wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: transparent;
+    margin-bottom: 5vh;
+    padding: 5vh 0;
+  }
+
+  .link {
+    text-decoration: none;
+    margin-bottom: 0;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }

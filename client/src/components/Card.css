@@ -1,0 +1,160 @@
+
+.card {
+    width: 400px;
+    height: 280px;
+    margin-bottom: 25px;
+    background: -webkit-radial-gradient(transparent, #dfceeb);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 5px rgba(67,87,179,0.67) inset;
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(67,87,179,0.67) inset;
+    -moz-box-shadow: 0px 0px 20px 5px rgba(67,87,179,0.67) inset;
+    padding-top: 3px;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  
+  
+  img {
+    width:250px;
+    height:160px;
+  }
+  
+  .text {
+    text-align: center;
+  }
+  
+
+  .name {
+    font-size: 30px;
+    margin-top: 2px;
+    margin-bottom: 0;
+    padding: 2px;
+  }
+  
+  .continent {
+    font-size: 22px;
+    margin-top: 0;
+    color: #776c62;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .card h3{
+    font-size: 2rem;
+    margin: 10px 9px;
+    color: rgb(98, 119, 235);
+    text-shadow: 1px 1px 2px rgb(105, 116, 69);
+}
+
+
+
+.card h5 {
+    margin-top: 0;
+}
+
+.card img {
+    width: 300px;
+    border-radius: 15px;
+    max-height: 230px;
+}
+
+.content {
+    color: rgb(173, 170, 170);
+} */
+
+ /* .link {
+    text-decoration: none;
+}
+
+.card {
+    width: 350px;
+    height: 300;
+    margin-bottom: 25px;
+    background: -webkit-radial-gradient(#10305810, #0a0011);
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px 5px rgba(67,87,179,0.67) inset;
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(67,87,179,0.67) inset;
+    -moz-box-shadow: 0px 0px 20px 5px rgba(67,87,179,0.67) inset;
+    padding-top: 3px;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 30px 10px rgba(67,87,179,0.67) inset;
+    -webkit-box-shadow: 0px 0px 30px 10px rgba(67,87,179,0.67) inset;
+    -moz-box-shadow: 0px 0px 30px 10px rgba(67,87,179,0.67) inset;
+} */ 
+
+/* @keyframes card {
+    from {
+        opacity: 0;
+        transform: translate3d(+100%, 0, 0)
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0)
+    }
+} */
+/* 
+@media (max-width: 1900px){
+    .card {
+        width: 330px;
+        height: 340px;
+    }
+    .card img {
+        width: 250px;
+        max-height: 180px;
+    }
+} */
+
+/* @media (max-width: 1440px){
+    .card {
+        width: 300px;
+        height: 280px;
+    }
+    .card img {
+        width: 200px;
+        max-height: 130px;
+    }
+    .card h3 {
+        font-size: 1.5rem;
+    }
+} */
+
+/* @media (max-width: 1300px) {
+    .card {
+        width: 230px;
+        height: 220px;
+    }
+    .card h3 {
+        font-size: 1.3rem;
+    }
+    .card img {
+        width: 150px;
+        max-height: 90px;
+    }
+    .card h5 {
+        font-size: 0.9rem;
+    }
+} */

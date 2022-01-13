@@ -1,0 +1,33 @@
+
+
+body {
+    background-image: url("./Landing.jpeg");
+    background-size: 100%;
+  }
+
+  .title {
+    font-size: 70px;
+    color: rgb(38, 19, 109);
+    margin-bottom: 100px;
+  }
+ 
+  .button {
+    color:white;
+    border-radius: 10px;
+    font-size: 20px;
+    height: 60px;
+    width: 120px;
+    background-color: rgb(42, 0, 231);
+    shape-outside: none;
+    margin-top: 50px;
+  }
+  
+  .button:hover {
+    cursor: pointer;
+    background-color:white;
+    color: rgb(42, 0, 231);
+    font-size: 20px;
+  }
+  
+
+ 

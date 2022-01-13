@@ -1,0 +1,24 @@
+.buttonSearch {
+    color:white;
+    border-radius: 10px;
+    font-size: 15px;
+    height: 25px;
+    width: 80px;
+    background-color: rgb(42, 0, 231);
+    margin-top: 50px;
+  }
+  
+  .buttonSearch:hover {
+    cursor: pointer;
+    background-color:white;
+    color: rgb(42, 0, 231);
+    font-size: 15px;
+    height: 25px;
+    width: 80px;
+  }
+
+  .input {
+   
+    background-color: white;
+    border: 1px solid rgb(48, 110, 180);
+  }

@@ -1,11 +1,18 @@
 import React from "react";
+import './Card.css'
 
 export default function Card ({name, image, continent}) {
     return (
-        <div>
-            <img src ={image} alt='img not found' width='250px' height='160px' /> 
-            <h3>{name}</h3>
-            <h5>{continent}</h5>
+        <div className="card">
+            <div className="image">
+            <img src ={image} alt='img not found'  /> 
+            </div>
+          
+            <div className="text">
+            <h3 className="name">{name}</h3>
+            <h5 className="continent">{continent}</h5>
+            </div>
+           
         </div>
     )
 }
