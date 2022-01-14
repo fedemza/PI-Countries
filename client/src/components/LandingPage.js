@@ -6,7 +6,7 @@ export default function LandingPage() {
     return (
         <div className='container'>
             
-            <h1 className='title'> El mundo te espera </h1>
+            <h1 className='titleLanding'> EL MUNDO TE ESPERA </h1>
             <Link  to='/home'>
                 <button className='button'>Ingresar</button>
             </Link>

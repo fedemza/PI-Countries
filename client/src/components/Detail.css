@@ -1,0 +1,93 @@
+.containerDetail {
+    height: 100vh;
+    /* background-color: #f3f1ed; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('');
+    background-size: cover;
+    z-index: -1;
+  }
+  
+
+  
+  .cardDetail {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5vh 0.8vw;
+    background-color:white;
+    box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
+    z-index: 10;
+  }
+  
+  .infoContainer {
+    margin-top: 2vh;
+    height: 50%;
+  }
+  
+ 
+  .flag {
+    width:350px;
+    height: 220px;
+  } 
+  
+  h1 {
+    margin: 0;
+    color:hsl(251, 79%, 36%);
+    
+  }
+  
+  h2 {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    color:hsl(251, 79%, 36%);
+  }
+  
+  h3 {
+    margin: 0.5vh;
+    color:hsl(251, 79%, 36%);
+  }
+  
+  .activities {
+    display: flex;
+    flex-direction: column;
+    
+    color:hsl(251, 79%, 36%);
+    margin: 3px;
+    
+  }
+
+  .activityName{
+    margin: 7px;
+  }
+  .detailItem{
+      margin: 0%;
+  }
+  .titleItem{
+    color:rgb(36, 12, 143);
+    font-weight: 800;
+  }
+
+  
+
+  .buttonD {
+    color:white;
+    border-radius: 10px;
+    font-size: 15px;
+    height: 25px;
+    width: 80px;
+    background-color: rgb(42, 0, 231);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .buttonD:hover {
+    cursor: pointer;
+    background-color:white;
+    color: rgb(42, 0, 231);
+    font-size: 15px;
+    height: 25px;
+    width: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
