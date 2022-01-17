@@ -17,6 +17,8 @@ export default function Detail(props){
     return (
 
         <div>  
+
+            
            
         <div className="containerDetail">
          
@@ -36,7 +38,7 @@ export default function Detail(props){
             <h3> <span className="titleItem"> Continente:</span> {myCountry[0].continent}</h3>
             <h3><span className="titleItem">  Subregion:</span> {myCountry[0].subregion}</h3>
             <h3> <span className="titleItem"> Area:</span> {(myCountry[0].area)/1000000} millones de KM²</h3>
-            <h3> <span className="titleItem"> Población:</span> {myCountry[0].population} Habitantes</h3>
+            <h3> <span className="titleItem"> Población:</span> {myCountry[0].population} habitantes</h3>
             <div>  <h3>  <span className="titleItem">  Actividades:</span></h3>
             {myCountry[0].activities.length?myCountry[0].activities.map(el=>(
                 <div className="activities">      
@@ -55,7 +57,7 @@ export default function Detail(props){
 
     
         }
-       
+         
         </div>
          
         

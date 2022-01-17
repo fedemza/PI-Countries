@@ -70,7 +70,12 @@ const getCountriesQuery= async (req,res,next) => {
 
 const getCountries = async (req,res)=>{
     
-    
+
+    // con Promise
+    // const allCountries =  getDbInfo();
+    // allCountries.then(r=>res.status(200).send(r))
+    // .catch(e=>console.log(e))
+
     try {
 
         const allCountries = await getDbInfo();

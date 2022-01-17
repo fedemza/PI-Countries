@@ -4,7 +4,7 @@ import './LandingPage.css'
 
 export default function LandingPage() { 
     return (
-        <div className='container'>
+        <div className='containerLanding'>
             
             <h1 className='titleLanding'> EL MUNDO TE ESPERA </h1>
             <Link  to='/home'>

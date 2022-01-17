@@ -9,27 +9,28 @@ import App from './App';
 ///////
 
 
-//import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 //import Home from './components/Home';
-//import store from './store';
+import store from './store';
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 //import Detail from './components/Detail';
 
 //import axios from 'axios';
 import LandingPage from './components/LandingPage';
-// import ActivityCreate from './components/ActivityCreate';
+import ActivityCreate from './components/ActivityCreate';
 
 test('Landing Page has a button Ingresar', () => {
   render(
     <MemoryRouter>
-      <LandingPage />
+      <LandingPage/>
     </MemoryRouter>
   );
  
   const linkElement = screen.getByText("Ingresar");
   expect(linkElement).toBeInTheDocument();
 });
+
 
 
 

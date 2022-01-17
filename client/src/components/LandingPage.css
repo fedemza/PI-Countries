@@ -1,14 +1,16 @@
 
 
 body {
-    background-image: url("./Landing.jpeg");
+    background-image: url("./11.png");
     background-size: 100%;
   }
 
   .titleLanding {
     font-size: 70px;
+    font-style: italic;
+    margin-top: 90px;
     color: #230d85;
-    background-color:rgba(255, 255, 255, 0.438);
+    /* background-color:rgba(255, 255, 255, 0.438); */
     margin-bottom: 100px;
     border-radius: 20px;
   }

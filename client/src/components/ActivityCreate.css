@@ -2,9 +2,13 @@
     box-sizing: border-box;
   }
   
-  .container {
-    background-image: url('');
-    background-size: cover;
+  .containerCreateActivity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* background-color: #f3f1ed; */
+    padding: 0;
   }
   
   

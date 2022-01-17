@@ -135,7 +135,7 @@ export default function ActivityCreate(){
         dispatch(getCountries());
     },[])
     return(
-        <div className="container">
+        <div className="containerCreateActivity">
             <Link to='/home' ><button className='btnBack' >Volver</button>  </Link>
             <h1 className="title">Crea una Actividad</h1>
             <div className="create">
@@ -214,7 +214,7 @@ export default function ActivityCreate(){
                
                 <div>
 
-                <button className='buttonCreateActivity' type="submit" > Crear Actividad </button>
+                <button className='buttonCreateActivity' type="submit" >Crear Actividad</button>
 
                 </div>
             </form>

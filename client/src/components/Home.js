@@ -31,7 +31,6 @@ export default function Home (){
             activitiesUnique.push(elemento);
         }
       }
-    
     const [orden, setOrden] = useState('')
     const [currentPage, setCurrentPage] = useState(1);
     const countriesFirstPage = 9
@@ -70,7 +69,7 @@ export default function Home (){
         e.preventDefault();
         dispatch(orderByPopulation(e.target.value))
         setCurrentPage(1)
-       setOrden(e.target.value)
+        setOrden(e.target.value)
     }
   
     function handleFilterContinent(e){
@@ -81,7 +80,8 @@ export default function Home (){
         dispatch(filterCountriesByActivity(e.target.value))
     }
     function handleFilterActivitiesName(e){
-        dispatch(filterCountriesByActivityName(e.target.value))
+        dispatch(filterCountriesByActivityName(e.target.value));
+        
     }
 
 
@@ -99,7 +99,7 @@ export default function Home (){
                 Volver a cargar todos los Paises
             </button>
             <div>
-            <navbar>
+           
             <div className='filtersBox'>
             <select className='filter' onChange={e => handleSort(e)}>
                   <option value='Order'>Ordenar</option>
@@ -124,7 +124,7 @@ export default function Home (){
                     <option value='Antarctic'>Antártida</option>
                 </select>
                 <select className='filter'  onChange={e => handleFilterActivity(e)}>
-                    <option value='All'>Actividades por Estaciones</option>
+                    <option value='All'>Actividades por Temporada</option>
                     <option value='Verano'>Verano</option>
                     <option value='Primavera'>Primavera</option>
                     <option value='Invierno'>Invierno</option>
@@ -148,7 +148,7 @@ export default function Home (){
                 />
 
                 <SearchBar/> 
-                </navbar>   
+                
                 <div className='cardBox'>
                 {currentCountries?.map(el => {
                     return (
