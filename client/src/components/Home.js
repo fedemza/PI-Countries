@@ -10,7 +10,7 @@ import SearchBar from './SearchBar';
 import './Home.css'
 
 export default function Home (){
-
+    
     const dispatch = useDispatch()
     const allCountries = useSelector ((state) => state.countries);
    const actividades=[]
@@ -56,7 +56,6 @@ export default function Home (){
     function handleClick(e){
         e.preventDefault();
         dispatch(getCountries());
-       
     }
 
     function handleSort(e){

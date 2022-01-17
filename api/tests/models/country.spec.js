@@ -45,7 +45,7 @@ describe('Activity Model', () => {
           .then(() => done(new Error('It requires a valid difficulty')))
           .catch(() => done());
       })
-      it('should work when its a valid difficulty', () => {
+      it('should work when its a valid info', () => {
         Activity.create({ name: 'Tenis', difficulty: '2' ,season:'Verano',countries:['Argentina','Brazil']});
       });
     });
