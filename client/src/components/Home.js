@@ -27,9 +27,9 @@ export default function Home (){
     for(var i = 0; i < actividades.length; i++) {
         
         
-        const elemento = actividades[i];
+        const elemento = actividades[i].toLowerCase();
         
-        if (!activitiesUnique.includes(actividades[i])) {
+        if (!activitiesUnique.includes(elemento)) {
             activitiesUnique.push(elemento);
         }
       }
@@ -136,7 +136,7 @@ export default function Home (){
                 <option value='All'>Actividades</option>
                     {activitiesUnique.map(el => 
                          ( 
-                    <option value={el}>{el}</option>
+                    <option value={el.toLowerCase()}>{el.charAt(0).toUpperCase() + el.slice(1).toLowerCase()}</option>
                     ))}
                 </select>
                 </div>
