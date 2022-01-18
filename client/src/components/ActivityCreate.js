@@ -23,7 +23,7 @@ function validate(input) {
     if (input.countries.length===0) {
         errors.countries = 'Por favor selecciona al menos, un pais'
     }
-    console.log('soy countries',input.countries)
+ //   console.log('soy countries',input.countries)
     return errors
 }
 
@@ -104,7 +104,7 @@ export default function ActivityCreate(){
         else{
 
             e.preventDefault();
-            console.log(input)
+           // console.log(input)
             dispatch(postActivity(input));
             alert('Actividad Creada!!')
             setInput({
@@ -114,7 +114,7 @@ export default function ActivityCreate(){
                 season:'',
                 countries:[]
             })
-            history.push('./home')
+             history.push('./home')
         }
       
     }    
