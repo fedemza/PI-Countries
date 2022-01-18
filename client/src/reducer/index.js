@@ -20,7 +20,7 @@ function rootReducer (state = initialState, action){
                 countries:action.payload,
             }
         
-         case 'POST_VIDEOGAME':
+         case 'POST_COUNTRY':
                 return{
                     ...state
                 }

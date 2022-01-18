@@ -28,7 +28,7 @@ describe('Country routes', () => {
 });
 
 describe("GET /countries/:idPais", function() {
-  it("it should has status code 200", function(done) {
+  it("it should has status 200", function(done) {
     supertest(app)
       .get("/countries/ARG")
       .expect(200)
@@ -42,7 +42,7 @@ describe("GET /countries/:idPais", function() {
 
 
 describe("GET /wrong page", function() {
-  it("it should has status code 404", function(done) {
+  it("it should has status  404", function(done) {
     supertest(app)
       .get("/country")
       .expect(404)
