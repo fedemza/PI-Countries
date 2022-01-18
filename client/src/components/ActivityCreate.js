@@ -21,7 +21,7 @@ function validate(input) {
         errors.season = 'Selecciona una temporada';
     }; 
     if (input.countries.length===0) {
-        errors.countries = 'Por favor selecciona al menos, un pais'
+        errors.countries = 'Selecciona al menos un pais'
     }
  //   console.log('soy countries',input.countries)
     return errors
