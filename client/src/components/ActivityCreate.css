@@ -23,8 +23,9 @@
   
   .title {
     margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 4vh;
-    color:rgb(42, 0, 231) ;
+    color:#230d85 ;
   }
 
   .error{

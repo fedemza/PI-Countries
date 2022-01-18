@@ -144,7 +144,7 @@ export default function ActivityCreate(){
             <form className="form" onSubmit={(e) => handleSubmit(e)} >
             <div>
                 <label className="label" for='nombre'>Nombre:</label>
-                <input className="inputForm" id='nombre' type='text' value={input.name} name='name' onChange={(e) => handleChange(e)}  required/>
+                <input className="inputForm" id='nombre' type='text' value={input.name} name='name' onChange={(e) => handleChange(e)} />
                 
                 {errors.name&& (
                     <p  className='error' >{errors.name}</p>
@@ -169,7 +169,7 @@ export default function ActivityCreate(){
             </div>
             <div>
                 <label className="label">Duración:</label>
-                <input className="inputForm" type='text' value={input.duration} name='duration' onChange={(e) => handleChange(e)} required/>
+                <input className="inputForm" type='text' value={input.duration} name='duration' onChange={(e) => handleChange(e)} />
                 {errors.duration&& (
                     <p  className='error' >{errors.duration}</p>
                 )}
