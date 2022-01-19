@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: left;
     align-items: left;
+    border-radius: 15PX;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 1.5vh 0.8vw;

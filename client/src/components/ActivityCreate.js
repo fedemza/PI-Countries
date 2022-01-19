@@ -44,14 +44,14 @@ export default function ActivityCreate(){
         countries:[]
     
     })
-
+    
     function handleSelect(e){
        if(e.target.value !=='' && !input.countries.includes(e.target.value))  
      {   setInput({
             ...input,
             countries:[...input.countries,   e.target.value]
             
-        });
+        });//console.log('soy imputCountriesdelSelect',input.countries)
         setErrors(validate({
               ...input,
               [e.target.name]: e.target.value
@@ -87,13 +87,14 @@ export default function ActivityCreate(){
             ...input,
             [e.target.name]: e.target.value
         }))
-        console.log(input)
+      //  console.log(input)
     }
 
   
 
  
-    function handleSubmit(e){
+    function handleSubmit(e){  
+       
         if(
             !input.name || !input.difficulty || !input.duration
         || !input.season || input.countries.length<1 || input.season=='' || input.difficulty=='' 
@@ -116,7 +117,7 @@ export default function ActivityCreate(){
             })
              history.push('./home')
         }
-      
+       
     }    
        function handleDelete(e){
            setInput({
@@ -127,7 +128,7 @@ export default function ActivityCreate(){
             ...input,
             countries:input.countries.filter (c => c !== e)
         }))
-        
+     //  console.log('soy countries',input.countries)
        }
     
 
@@ -199,17 +200,21 @@ export default function ActivityCreate(){
                     <p  className='error' >{errors.countries}</p>
                 )}
                  <div className="listCountries">
-            {input.countries.map(e =>  e?
+                 
+            {
+                
+            input.countries.map(el =>  
+                
                 <div >
                    
-                    <p className="countriesList" >{e}  {' '}
+                    <p className="countriesList" >{el}  {' '}
                    
-                    <button className="buttonList" name='countries' value={e} onClick={() => handleDelete(e)} >x</button>
+                    <button className="buttonList" name='countries' key={el} value={el} onClick={() => handleDelete(el)} >x</button>
                    
                     </p>
                 
-                </div>: null
-                )}   
+                </div>
+                )}     
             </div>   
                
                 <div>
@@ -218,6 +223,19 @@ export default function ActivityCreate(){
 
                 </div>
             </form>
+
+               {/* {
+            input.countries.map(e =>  
+                <div >
+                   
+                    <p className="countriesList" >{e}  {' '}
+                   
+                    <button className="buttonList" name='countries'  value={e} onClick={() => handleDelete(e)} >x</button>
+                   
+                    </p>
+                
+                </div>
+                )}    */}
             </div>
                     
         
