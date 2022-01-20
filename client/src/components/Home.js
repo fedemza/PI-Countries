@@ -11,9 +11,11 @@ import './Home.css'
 
 export default function Home (){
     
+    
     const dispatch = useDispatch()
     const allCountries = useSelector ((state) => state.countries);
     const allCountriesB = useSelector ((state) => state.allCountries);
+   
     
    const actividades=[]
     const activities = allCountriesB.map(el=> {
@@ -33,7 +35,14 @@ export default function Home (){
             activitiesUnique.push(elemento);
         }
       }
+     let subRegion=[]
+     allCountriesB.map(el=>{ if(!subRegion.includes(el.subregion)){subRegion.push(el.subregion)}})
     const [orden, setOrden] = useState('')
+    const [continent,setContinent]=useState()
+    const [order,setOrder]=useState()
+    const [population,setPopulation]=useState()
+    const [season,setSeason]=useState()
+    const [activity,setActivity]=useState()
     const [currentPage, setCurrentPage] = useState(1);
     const countriesFirstPage = 9
     const countriesPerPage = 10
@@ -55,9 +64,17 @@ export default function Home (){
     },[dispatch])
 
 
+
     function handleClick(e){
         e.preventDefault();
         dispatch(getCountries());
+        setContinent('All');
+        setOrder('Order');
+        setPopulation('Population')
+        setSeason('All')
+        setActivity('All')
+        
+     
     }
 
     function handleSort(e){
@@ -65,23 +82,29 @@ export default function Home (){
         dispatch(orderByName(e.target.value))
         setCurrentPage(1)
         setOrden(e.target.value)
+        setOrder(e.target.value)
     }
     function handleSortPopulation(e){
         e.preventDefault();
         dispatch(orderByPopulation(e.target.value))
         setCurrentPage(1)
         setOrden(e.target.value)
+        setPopulation(e.target.value)
     }
   
     function handleFilterContinent(e){
         dispatch(filterCountriesByContinent(e.target.value))
         setCurrentPage(1)
+        setContinent(e.target.value)
     }
+  
     function handleFilterActivity(e){
         dispatch(filterCountriesByActivity(e.target.value))
+        setSeason(e.target.value)
     }
     function handleFilterActivitiesName(e){
         dispatch(filterCountriesByActivityName(e.target.value));
+        setActivity(e.target.value)
         
     }
 
@@ -102,12 +125,12 @@ export default function Home (){
             <div>
            
             <div className='filtersBox'>
-            <select className='filter' onChange={e => handleSort(e)}>
+            <select className='filter' value={order} onChange={e => handleSort(e)}>
                   <option value='Order'>Ordenar</option>
                     <option value='AZ'>A-Z</option>
                     <option value='ZA'>Z-A</option>
             </select>
-            <select className='filter'  onChange={e => handleSortPopulation(e)}  >
+            <select className='filter' value={population} onChange={e => handleSortPopulation(e)}  >
                     <option value='Population'>Poblacion</option>
                     <option value='Populationdesc'>Población+</option>
                     <option value='Populationasc'>Población-</option>
@@ -115,7 +138,7 @@ export default function Home (){
              
              
 
-                <select className='filter'  onChange={e => handleFilterContinent(e)}>
+                <select className='filter' value={continent} onChange={e => handleFilterContinent(e)}>
                     <option value='All'>Continentes</option>
                     <option value='Americas'>América</option>
                     <option value='Asia'>Asia</option>
@@ -124,7 +147,8 @@ export default function Home (){
                     <option value='Oceania'>Oceanía</option>
                     <option value='Antarctic'>Antártida</option>
                 </select>
-                <select className='filter'  onChange={e => handleFilterActivity(e)}>
+               
+                <select className='filter' value={season} onChange={e => handleFilterActivity(e)}>
                     <option value='All'>Actividades por Temporada</option>
                     <option value='Verano'>Verano</option>
                     <option value='Primavera'>Primavera</option>
@@ -132,7 +156,7 @@ export default function Home (){
                     <option value='Otoño'>Otoño</option>
                 </select>
                 
-                <select className='filter'  onChange={(e) => handleFilterActivitiesName(e)} >
+                <select className='filter' value={activity} onChange={(e) => handleFilterActivitiesName(e)} >
                 <option value='All'>Actividades</option>
                     {activitiesUnique.map(el => 
                          ( 
@@ -151,16 +175,19 @@ export default function Home (){
                 <SearchBar/> 
                 
                 <div className='cardBox'>
-                {currentCountries?.map(el => {
+                {currentCountries?.map(el => { 
+
+                
                     return (
                         <fragment>
                         <Link className='link' to={'countries/' + el.id}>
                         <Card name={el.name} image={el.image} continent={el.continent} key={el.id} /> 
                         </Link>
-
                         </fragment>
                        
-                 ) } )}
+                 ) 
+                 
+                 } )}
                 </div>
             
                {/* <Paginado 

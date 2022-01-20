@@ -40,7 +40,7 @@ function rootReducer (state = initialState, action){
                 countries: continentFiltered
                 
             }
-            
+        
          
             case 'ORDER_BY_NAME':
 

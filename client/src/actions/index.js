@@ -63,6 +63,7 @@ export function filterCountriesByContinent(payload){
     }
 
 }
+
 export function filterCountriesByActivity(payload){
 
     return{

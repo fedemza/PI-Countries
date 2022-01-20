@@ -19,7 +19,8 @@ const loadDB = async ()=>{
                   capital:el.capital?el.capital[0]:'no se encontro capital',
                   subregion:el.subregion?el.subregion:'no se encontró subregion',
                   area:parseInt(el.area) ? parseInt(el.area) : 0,
-                  population:parseInt(el.population)?parseInt(el.population):0
+                  population:parseInt(el.population)?parseInt(el.population):0,
+                  
   
               }
             })
@@ -47,6 +48,26 @@ const getDbInfo=async()=>{
 
 const getCountriesQuery= async (req,res,next) => {
     const { name } = req.query
+
+  // CON PROMISE
+//   let countriesTotal =  getDbInfo();
+//   if(name){
+
+  
+//   countriesTotal.then(r=>   
+//             r.filter ( el => el.name.toLowerCase().includes(name.toLowerCase()))
+          
+        
+//     ).then(c=>c.length ?
+//         res.status(200).send(c):
+//         res.status(404).send('No se encontró el país, vuelva a intentar por favor'))
+
+// }else{
+
+//                 next()
+//             }
+
+            
     let countriesTotal = await getDbInfo();
 
     try {
@@ -55,7 +76,7 @@ const getCountriesQuery= async (req,res,next) => {
             let countryName = await countriesTotal.filter ( el => el.name.toLowerCase().includes(name.toLowerCase()))
             countryName.length ?
             res.status(200).send(countryName):
-            res.status(404).send('No se encontró el país, vuelva a intentar por favor')
+            res.satus(404).send(['No se encontró el país'])
         } else{
 
             next()

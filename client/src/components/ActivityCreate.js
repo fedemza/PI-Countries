@@ -34,7 +34,6 @@ export default function ActivityCreate(){
     const history = useHistory()
     const [errors,setErrors] = useState({});
     
-   
 
     const [input,setInput] = useState({
         name:'',

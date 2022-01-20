@@ -7,9 +7,12 @@ import './Detail.css'
 export default function Detail(props){
     console.log(props)
     const dispatch = useDispatch ()
+   
+
     useEffect(()=> {
         dispatch(getDetails(props.match.params.id))
     },[dispatch])
+   
 
     const myCountry= useSelector ((state) => state.detail )
 
