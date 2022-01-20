@@ -10,8 +10,6 @@ const { postActivity } = require('../controllers/activity.controller');
 const router = Router();
 
 
-
-
 router.post('/', postActivity)
 
     

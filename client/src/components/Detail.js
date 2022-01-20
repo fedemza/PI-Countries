@@ -15,7 +15,7 @@ export default function Detail(props){
    
 
     const myCountry= useSelector ((state) => state.detail )
-
+    //console.log('soy myCountry',myCountry)
 
     return (
 

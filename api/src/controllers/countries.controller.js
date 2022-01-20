@@ -49,24 +49,6 @@ const getDbInfo=async()=>{
 const getCountriesQuery= async (req,res,next) => {
     const { name } = req.query
 
-  // CON PROMISE
-//   let countriesTotal =  getDbInfo();
-//   if(name){
-
-  
-//   countriesTotal.then(r=>   
-//             r.filter ( el => el.name.toLowerCase().includes(name.toLowerCase()))
-          
-        
-//     ).then(c=>c.length ?
-//         res.status(200).send(c):
-//         res.status(404).send('No se encontró el país, vuelva a intentar por favor'))
-
-// }else{
-
-//                 next()
-//             }
-
             
     let countriesTotal = await getDbInfo();
 
@@ -76,7 +58,7 @@ const getCountriesQuery= async (req,res,next) => {
             let countryName = await countriesTotal.filter ( el => el.name.toLowerCase().includes(name.toLowerCase()))
             countryName.length ?
             res.status(200).send(countryName):
-            res.satus(404).send(['No se encontró el país'])
+            res.send(['No se encontró el país'])
         } else{
 
             next()
@@ -91,11 +73,6 @@ const getCountriesQuery= async (req,res,next) => {
 
 const getCountries = async (req,res)=>{
     
-
-    // con Promise
-    // const allCountries =  getDbInfo();
-    // allCountries.then(r=>res.status(200).send(r))
-    // .catch(e=>console.log(e))
 
     try {
 

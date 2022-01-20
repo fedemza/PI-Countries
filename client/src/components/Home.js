@@ -35,8 +35,7 @@ export default function Home (){
             activitiesUnique.push(elemento);
         }
       }
-     let subRegion=[]
-     allCountriesB.map(el=>{ if(!subRegion.includes(el.subregion)){subRegion.push(el.subregion)}})
+  
     const [orden, setOrden] = useState('')
     const [continent,setContinent]=useState()
     const [order,setOrder]=useState()
@@ -170,22 +169,21 @@ export default function Home (){
                 countriesFirstPage={countriesFirstPage}
                 allCountries={allCountries.length}
                 paginado={paginado}
+                currentPage={currentPage}
                 />
 
                 <SearchBar/> 
                 
                 <div className='cardBox'>
-                {currentCountries?.map(el => { 
+                {currentCountries?.map(el => { if(el.name){
 
-                
                     return (
-                        <fragment>
+                        <div>
                         <Link className='link' to={'countries/' + el.id}>
                         <Card name={el.name} image={el.image} continent={el.continent} key={el.id} /> 
                         </Link>
-                        </fragment>
-                       
-                 ) 
+                        </div> 
+                 ) } else {return (<h1>No se encontró ningun país</h1>)}
                  
                  } )}
                 </div>

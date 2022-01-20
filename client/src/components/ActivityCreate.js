@@ -23,6 +23,7 @@ function validate(input) {
     if (input.countries.length===0) {
         errors.countries = 'Selecciona al menos un pais'
     }
+    
  //   console.log('soy countries',input.countries)
     return errors
 }
@@ -102,6 +103,7 @@ export default function ActivityCreate(){
         ){ 
             alert('completar todo lo requerido correctamente')}
         else{
+            
 
             e.preventDefault();
            // console.log(input)
