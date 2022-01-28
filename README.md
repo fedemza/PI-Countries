@@ -20,3 +20,9 @@
 <p align='left'>
     <img src='./images/Captura de pantalla 2022-01-28 105744.png' </img>
 </p>
+<p align='left'>
+    <img src='./images/Captura de pantalla 2022-01-28 110616.png' </img>
+</p>
+<p align='left'>
+    <img src='./images/Captura de pantalla 2022-01-28 110935.png' </img>
+</p>
