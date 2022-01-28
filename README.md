@@ -5,20 +5,19 @@
 
 # Individual Project - Henry Countries
 
-<p align="left">
-  <img height="200" src="./countries.png" />
-</p>
+## Descripción del Proyecto
+Country app that allows you to sort and filter the data brought from an API and a local database. It also allows you to create activities for one or more countries and show each country in detail.
 
-## Objetivos del Proyecto
+### Technologies: JavaScript, React, Redux, Node.js, Express.js, SQL, PostgressSQL, HTML, CSS.
 
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
+
+<div>
+
+###
+</div>
 
 <p align='left'>
-    <img src='./images/Captura de pantalla 2022-01-28 105744.png'   height='100px' width='150px'  </img>
+    <img src='./images/Captura de pantalla 2022-01-28 105744.png'   height='' width=''  </img>
 </p>
 <p align='left'>
     <img src='./images/Captura de pantalla 2022-01-28 110616.png' </img>
