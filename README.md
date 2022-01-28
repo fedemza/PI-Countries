@@ -17,5 +17,5 @@
 - Usar y practicar testing.
 
 <p align='left'>
-    <img src='file:///C:/Users/fedev/Downloads/Captura%20de%20pantalla%202022-01-28%20105744%20(1).webp' </img>
+    <img src='C:\Users\fedev\Downloads\Captura de pantalla 2022-01-28 105744.png' </img>
 </p>
