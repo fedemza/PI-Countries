@@ -17,7 +17,7 @@ export default function Paginado ({countriesPerPage, allCountries, paginado, cou
            
             <ul className="paginado" >
                { currentPage!==1?
-                   <a onClick={() => paginado(currentPage-1)}>prev</a>:<></>
+                   <a className="number"  onClick={() => paginado(currentPage-1)}>prev</a>:<></>
                }
             
 
@@ -30,7 +30,7 @@ export default function Paginado ({countriesPerPage, allCountries, paginado, cou
                 ))}
                 
                 { currentPage!==26?
-                   <a onClick={() => paginado(currentPage+1)}>next</a>:<></>
+                   <a className="number"  onClick={() => paginado(currentPage+1)}>next</a>:<></>
                }
             </ul>
 
