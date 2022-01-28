@@ -18,5 +18,5 @@
 - Usar y practicar testing.
 
 <p align='left'>
-    <img src='Captura de pantalla 2022-01-28 105744.png' </img>
+    <img src='./images/Captura de pantalla 2022-01-28 105744.png' </img>
 </p>
